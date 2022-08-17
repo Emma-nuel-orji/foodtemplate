@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<div class="preloader">
+     <div class="sk-spinner sk-spinner-wordpress">
+          <span class="sk-inner-circle"></span>
+     </div>
+</div>
+
+    <div class="container justify-center jumbotron " data-aos="zoom-in" style="margin-bottom: 2em; margin-top: 2em;border:1px solid #b9def0">
+        <form style="padding: 20px " method="POST" action="" novalidate>
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend style="text-align: center" class="container" >Reset Password</legend>
+                <div class="form-group">
+                    {{ form.email.label(class='form-control-label') }}
+                    {% if form.email.errors %}
+                        {{ form.email(class='form-control form-control-lg is-invalid') }}
+                        <div class="invalid-feedback">
+                            {% for error in form.email.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                         {{ form.email(class='form-control form-control-lg') }}
+                    {% endif %}
+                </div>
+            </fieldset>
+                <div class="form-group ">
+                    {{ form.submit(class='btn btn-primary') }}
+                </div>
+        </form>
+    </div>
+
+{% endblock content %}

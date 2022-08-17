@@ -1,0 +1,94 @@
+{% extends 'layout.html' %}
+{% block content%}
+
+<div class="preloader">
+     <div class="sk-spinner sk-spinner-wordpress">
+          <span class="sk-inner-circle"></span>
+     </div>
+</div>
+
+    <div class="container justify-center jumbotron" style="margin-bottom: 2em; margin-top: 2em; border:1px solid #b9def0">
+        <form style="padding: 20px;" method="POST" action="" novalidate>
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend style="text-align: center">Book Your Table Now</legend>
+
+                <div class="form-group">
+                    {{ form.day.label(class='form-control-label') }}
+                    {% if form.day.errors %}
+                        {{ form.day(class='form-control form-control-lg is-invalid') }}
+                        <div class="invalid-feedback">
+                            {% for error in form.day.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                         {{ form.day(class='form-control form-control-lg') }}
+                    {% endif %}
+                </div>
+
+                 <div class="form-group">
+                    {{ form.hour.label(class='form-control-label') }}
+                    {% if form.hour.errors %}
+                        {{ form.hour(class='form-control form-control-lg is-invalid') }}
+                        <div class="invalid-feedback">
+                            {% for error in form.hour.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                         {{ form.hour(class='form-control form-control-lg') }}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{ form.name.label(class='form-control-label') }}
+                    {% if form.name.errors %}
+                        {{ form.name(class='form-control form-control-lg is-invalid') }}
+                        <div class="invalid-feedback">
+                            {% for error in form.name.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                         {{ form.name(class='form-control form-control-lg') }}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{ form.phone.label(class='form-control-label') }}
+                    {% if form.phone.errors %}
+                        {{ form.phone(class='form-control form-control-lg is-invalid') }}
+                        <div class="invalid-feedback">
+                            {% for error in form.phone.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                         {{ form.phone(class='form-control form-control-lg') }}
+                    {% endif %}
+                </div>
+
+
+                <div class="form-group">
+                    {{ form.person.label(class='form-control-label') }}
+                    {% if form.person.errors %}
+                        {{ form.person(class='form-control form-control-lg is-invalid') }}
+                        <div class="invalid-feedback">
+                            {% for error in form.person.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                         {{ form.person(class='form-control form-control-lg') }}
+                    {% endif %}
+                </div>
+
+            </fieldset>
+                <div class="form-group" style="border-radius: 10px; ">
+                    {{ form.submit(class='btn btn-success') }}
+                </div>
+        </form>
+    </div>
+
+{% endblock content %}

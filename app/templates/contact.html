@@ -1,0 +1,80 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+
+    <section class="page-heading">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Contact Us</h1>
+                    <p>Whatever drinking vinegar hella fingerstache shoreditch kickstarter kitsch. La croix hella iceland flexitarian letterpress.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="container">
+        {% if success %}
+        <div class="alert alert-success" role="alert">
+            Your message has been sent successfully
+        </div>
+        {% endif %}
+    </div>
+
+
+    <section class="contact-us">
+        <div class="container">
+            <div class="row">
+                <div class="container">
+                    <div class="col-md-12">
+                        <div class="section-heading contact-info">
+                            <h2>Contact Info</h2>
+                            <p>Pellentesque nec orci in erat venenatis viverra. Vivamus in lorem et leo feugiat
+                                ullamcorper. Donec volutpat fermentum erat non aliquet. Cras fermentum, risus a blandit
+                                sodales, erat turpis eleifend lacus, venenatis mollis leo lorem vel eros. Quisque et sem
+                                tempus, feugiat urna iaculis, tempor metus.<br><br><em>30 Raffles Ave, <br>Singapore
+                                    039803</em></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 col-md-offset-3">
+                                <h2 style="color: white"> Welcome to my contact page</h2>
+                                <p>You Can Click On The Button Below To Send Me An Email.</p>
+                                <p>OR</p>
+                                <h4><p>Contact Me On <a href="tel: +2348124941387 ">+ 234 812 494 1387</a></p></h4>
+                                <a class="btn btn-success" href="mailto:eorji452@gmail.com">Send An Email</a>
+                                <div class="primary-button">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+<!--    <section class="map">-->
+<!--        <div class="container">-->
+<!--            <div class="row">-->
+<!--                <div class="col-md-12">-->
+<!--                    <div id="map">-->
+<!--            How to change your own map point-->
+<!--            1. Go to Google Maps-->
+<!--            2. Click on your location point-->
+<!--            3. Click "Share" and choose "Embed map" tab-->
+<!--            4. Copy only URL and paste it within the src="" field below-->
+<!--        -->
+<!--                        <iframe src="FF5W+R7X,GRA 400102,Enugu,Nigeria" width="100%" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </section>-->
+
+{% endblock content %}

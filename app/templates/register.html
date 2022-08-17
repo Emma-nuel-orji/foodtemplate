@@ -1,0 +1,82 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<div class="preloader">
+     <div class="sk-spinner sk-spinner-wordpress">
+          <span class="sk-inner-circle"></span>
+     </div>
+</div>
+
+    <div class="container justify-center jumbotron " data-aos="zoom-in" style="margin-bottom: 2em; margin-top: 2em;border:1px solid #b9def0">
+        <form  style="padding: 20px;" method="POST" action="" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend style="text-align: center" class="container" >Join Today</legend>
+
+                <div class="form-group">
+                    {{ form.username.label(class='form-control-label') }}
+                    {% if form.username.errors %}
+                        {{ form.username(class='form-control form-control-lg is-invalid') }}
+                        <div class="invalid-feedback">
+                            {% for error in form.username.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                         {{ form.username(class='form-control form-control-lg') }}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{ form.email.label(class='form-control-label') }}
+                    {% if form.email.errors %}
+                        {{ form.email(class='form-control form-control-lg is-invalid') }}
+                        <div class="invalid-feedback">
+                            {% for error in form.email.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                         {{ form.email(class='form-control form-control-lg') }}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{ form.password.label(class='form-control-label') }}
+                    {% if form.password.errors %}
+                        {{ form.password(class='form-control form-control-lg is-invalid') }}
+                        <div class="invalid-feedback">
+                            {% for error in form.password.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                         {{ form.password(class='form-control form-control-lg') }}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{ form.confirm_password.label(class='form-control-label') }}
+                    {% if form.confirm_password.errors %}
+                        {{ form.confirm_password(class='form-control form-control-lg is-invalid') }}
+                        <div class="invalid-feedback">
+                            {% for error in form.confirm_password.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                         {{ form.confirm_password(class='form-control form-control-lg') }}
+                    {% endif %}
+                </div>
+
+            </fieldset>
+                <div class="form-group ">
+                    {{ form.submit(class='btn btn-primary') }}
+                </div>
+        </form>
+        <h4>
+            Already have an account? <a href="{{ url_for('login') }}" >Login</a>
+        </h4>
+    </div>
+
+{% endblock content %}
