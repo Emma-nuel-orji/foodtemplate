@@ -54,7 +54,7 @@
 
   <body>
     <!-- Layout wrapper -->
-    <div class="layout-wrapper layout-content-navbar">
+    <div class=" layout-content-navbar">
       <div class="layout-container">
         <!-- Menu -->
 
@@ -119,10 +119,6 @@
               <span  class="app-brand-text demo menu-text fw-bolder ms-2">Home page</span>
             </a>
 
-            <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
-              <i class="bx bx-chevron-left bx-sm align-middle"></i>
-            </a>
-
           </div>
 
           <div class="menu-inner-shadow"></div>
@@ -150,6 +146,13 @@
                 <div data-i18n="Form Elements">Blog post</div>
               </a>
             </li>
+
+            <li class="menu-item">
+              <a href="{{ url_for('weekly') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-detail"></i>
+                <div data-i18n="Form Elements">WEEKLY FEATURED FOOD</div>
+              </a>
+            </li>
           </ul>
         </aside>
 
@@ -160,13 +163,6 @@
             class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
             id="layout-navbar"
           >
-            <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
-              <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
-                <i class="bx bx-menu bx-sm"></i>
-              </a>
-            </div>
-
-
             <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
 
 
@@ -233,7 +229,7 @@
             </div>
           </nav>
 
-           {% with messages = get_flashed_messages(with_categories=true) %}
+          {% with messages = get_flashed_messages(with_categories=true) %}
                 {% if messages %}
                      {% for category, message in messages %}
                          <div class="alert alert-{{ category }}">
@@ -245,11 +241,11 @@
 
             {% block contents %}
             {% endblock contents %}
-           </div>
+        </div>
 
-         </div>
+      </div>
 
-       <div class="layout-overlay layout-menu-toggle"></div>
+      <div class="layout-overlay layout-menu-toggle"></div>
     </div>
 
 
@@ -274,3 +270,8 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
   </body>
 </html>
+
+
+
+
+

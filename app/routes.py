@@ -1,12 +1,13 @@
 import os
 import secrets
 from PIL import Image
-from flask import render_template, url_for, flash, redirect, request, abort
+from flask import render_template, url_for, flash, redirect, request, abort, current_app
 from app import app, db, bcrypt, mail, mail_username
-from app.forms import RegistrationForm, LoginForm, UpdateAccountForm, FoodForm, TableForm, BlogForm, MenuForm, RequestResetForm, ResetPasswordForm, WeeklyForm
+from app.forms import RegistrationForm, LoginForm, UpdateAccountForm, FoodForm, TableForm, BlogForm, MenuForm, RequestResetForm, ResetPasswordForm, WeeklyForm, ContactForm
 from app.models import User, Order, Table, Blog, Menu, Weekly
 from flask_login import login_user, current_user, logout_user, login_required
 from flask_mail import Message
+from threading import Thread
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -28,19 +29,28 @@ def menu():
     return render_template("menu.html", menu=menu)
 
 
-@app.route("/contact", methods=["GET", "POST"])
+@app.route('/contact', methods=['GET', 'POST'])
+@login_required
 def contact():
-    if request.method == "POST":
-        name = request.form.get('name')
-        email = request.form.get('email')
-        phone = request.form.get('phone')
-        message = request.form.get('message')
+    user = User
+    form = ContactForm()
+    if form.validate_on_submit():
 
-        msg = Message(subject=f"Mail from {name}", body=f"Name: {name}\nE-mail: {email}\nPhone: {phone}\n\n\n{message}",
-                      sender=mail_username, recipients=['obiajulum1@outlook.com'])
+        msg = Message(f'New Message from {current_user.username}', sender=f'{user.email}',
+                      recipients=['eorji452@gmail.com'])
+        msg.body = f"""
+           Name :  {form.name.data}
+
+           Email :  {form.email.data}
+
+           Subject :  {form.subject.data}
+
+           Message :  {form.message.data}
+           """
         mail.send(msg)
-        return render_template("contact.html", success=True)
-    return render_template("contact.html")
+        flash('your message have been sent', 'success')
+
+    return render_template('contact.html', title='contact Form', form=form)
 
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -87,12 +97,41 @@ def save_picture(form_picture):
     picture_fn = random_hex + f_ext
     picture_path = os.path.join(app.root_path, 'static/img', picture_fn)
 
-    output_size = (1000, 1000)
+    # output_size = (1000, 1000)output_size
     i = Image.open(form_picture)
-    i.thumbnail(output_size)
+    i.thumbnail()
     i.save(picture_path)
 
     return picture_fn
+
+
+def send_email(subject, sender, recipients, text_body, html_body):
+    msg = Message(subject, sender=sender, recipients=recipients)
+    msg.body = text_body
+    msg.html = html_body
+    mail.send(msg)
+
+
+def send_password_reset_email(user):
+    token = user.get_reset_token()
+    send_email('[Sir Trendy] Reset Your Password', sender='wishotstudio@gmail.com', recipients=[user.email],
+               text_body=render_template('email/reset_password.txt', user=user, token=token),
+               html_body=render_template('email/reset_password.html', user=user, token=token))
+
+
+def send_async_email(app, msg):
+    with app.app_context():
+        mail.send(msg)
+
+
+def send_email(subject, sender, recipients, text_body, html_body):
+    app = current_app._get_current_object()
+    msg = Message(subject, sender=sender, recipients=recipients)
+    msg.body = text_body
+    msg.html = html_body
+    thr = Thread(target=send_async_email, args=[app, msg])
+    thr.start()
+    return thr
 
 
 @app.route('/account', methods=['GET', 'POST'])
@@ -281,46 +320,37 @@ def delete_weekly(weekly_id):
     return redirect(url_for('admin'))
     return render_template("Admin/home.html", weekly=weekly)
 
-def send_reset_email(user):
-    token = user.get_reset_token()
-    msg = Message('Password Reset Request', sender='eorji452@gmail.com', recipients=[user.email])
-    msg.body = f'''To reset your password, visit the following link:
-{url_for('reset_token', token=token, _external=True)}
 
-If you did not make this request then simply ignore this email and no changes will be made.
-'''
-    mail.send(msg)
-
-
-@app.route('/reset_password', methods=['GET', 'POST'])
+@app.route('/reset_password', methods=['POST', 'GET'])
 def reset_request():
     if current_user.is_authenticated:
         return redirect(url_for('index'))
     form = RequestResetForm()
     if form.validate_on_submit():
         user = User.query.filter_by(email=form.email.data).first()
-        send_reset_email(user)
-        flash('An email has been sent with instructions to reset your password.', 'info')
+        if user:
+            send_password_reset_email(user)
+        flash('An email has been sent with instructions to reset your password', 'info')
         return redirect(url_for('login'))
-    return render_template('reset_request.html', form=form)
+    return render_template('reset_request.html', title='Reset Password', form=form)
 
 
-@app.route('/reset_password/<token>', methods=['GET', 'POST'])
+@app.route('/reset_password-<token>', methods=['POST', 'GET'])
 def reset_token(token):
     if current_user.is_authenticated:
         return redirect(url_for('index'))
     user = User.verify_reset_token(token)
-    if user is None:
-        flash('That is an invalid or expired token', 'warning')
-        return redirect(url_for('reset_request'))
+    if not user:
+        flash('Invalid or expired token', 'warning')
+        return redirect(url_for('users.reset_request'))
     form = ResetPasswordForm()
     if form.validate_on_submit():
         hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
         user.password = hashed_password
         db.session.commit()
-        flash('Your password has been updated! You are now able to log in', 'success')
+        flash('your password has been updated!.', 'success')
         return redirect(url_for('login'))
-    return render_template('reset_token.html', form=form)
+    return render_template('reset_token.html', title='Reset Password', form=form)
 
 
 @app.errorhandler(404)

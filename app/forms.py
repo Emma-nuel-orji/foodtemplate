@@ -68,6 +68,14 @@ class TableForm(FlaskForm):
     submit = SubmitField('Book Now')
 
 
+class ContactForm(FlaskForm):
+    name = StringField('Enter Your Name', validators=[DataRequired()])
+    email = StringField('Enter Your Email', validators=[DataRequired()])
+    subject = StringField('Subject', validators=[DataRequired(), Length(min=2, max=20)])
+    message = StringField('Enter Your Message', validators=[DataRequired()])
+    submit = SubmitField('Submit')
+
+
 class BlogForm(FlaskForm):
     image = FileField('Update picture', validators=[FileAllowed(['jpg', 'png'])])
     title = StringField('Title', validators=[DataRequired()])

@@ -1,7 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7ab298bc-59bb-4dce-9591-d4c5d3c0376d" name="Default Changelist" comment="" />
+    <list default="true" id="7ab298bc-59bb-4dce-9591-d4c5d3c0376d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/static/img/default.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/email/reset_password.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/email/reset_password.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/52db8c97-0b47-4f92-bf98-631dd0484000.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/52db8c97-0b47-4f92-bf98-631dd0484000.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Emmanuel.db" beforeDir="false" afterPath="$PROJECT_DIR$/app/Emmanuel.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/account.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/account.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/admin/create_blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/admin/create_blog.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/admin/create_menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/admin/create_menu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/admin/create_weekly.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/admin/create_weekly.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/admin/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/admin/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/admin/layouts.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/admin/admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/layout.html" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,7 +41,23 @@
     <option name="HIDDEN_KINDS">
       <set />
     </option>
-    <expand />
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Emmanuel.db" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Emmanuel.db" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="Emmanuel.db" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
+      </path>
+    </expand>
     <select />
   </component>
   <component name="FavoritesManager">
@@ -28,12 +66,20 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\Users\Users com\Desktop\food_temp\.idea" />
+      </set>
+    </option>
+  </component>
   <component name="ProjectId" id="2CLfPfYz5foKJVgsBfB8pKab6D2" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="sqlite" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/static/img" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -43,6 +89,12 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.stylelint" value="" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Users com\Desktop\food_temp\app\static\img" />
+      <recent name="C:\Users\Users com\Desktop\food_temp\app\templates" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -168,7 +220,39 @@
       <workItem from="1660562742456" duration="2476000" />
       <workItem from="1660607557334" duration="4441000" />
       <workItem from="1660614139183" duration="1922000" />
-      <workItem from="1660673888768" duration="3804000" />
+      <workItem from="1660673888768" duration="6908000" />
+      <workItem from="1660892073736" duration="407000" />
+      <workItem from="1660899977742" duration="593000" />
+      <workItem from="1660913437333" duration="1297000" />
+      <workItem from="1661340628021" duration="572000" />
+      <workItem from="1661349104662" duration="708000" />
+      <workItem from="1661434889548" duration="44000" />
+      <workItem from="1661524272440" duration="3890000" />
+      <workItem from="1663765723713" duration="1212000" />
+      <workItem from="1663836713323" duration="5124000" />
+      <workItem from="1663962735643" duration="1184000" />
+      <workItem from="1663973404466" duration="14165000" />
+      <workItem from="1664204905306" duration="1193000" />
+      <workItem from="1664221166616" duration="1409000" />
+      <workItem from="1664821169619" duration="574000" />
+      <workItem from="1664823042694" duration="537000" />
+      <workItem from="1665154399371" duration="610000" />
+      <workItem from="1665337885121" duration="580000" />
+      <workItem from="1665430140390" duration="119000" />
+      <workItem from="1665483555446" duration="560000" />
+      <workItem from="1665496775301" duration="594000" />
+      <workItem from="1665845341686" duration="44000" />
+      <workItem from="1665846253734" duration="383000" />
+      <workItem from="1666272074880" duration="1042000" />
+      <workItem from="1666360021970" duration="814000" />
+      <workItem from="1666462338599" duration="657000" />
+      <workItem from="1666561913599" duration="1189000" />
+      <workItem from="1666639154025" duration="713000" />
+      <workItem from="1666730531385" duration="1182000" />
+      <workItem from="1666775992592" duration="594000" />
+      <workItem from="1666863505946" duration="1483000" />
+      <workItem from="1666880222497" duration="10240000" />
+      <workItem from="1666954576651" duration="1523000" />
     </task>
     <servers />
   </component>
@@ -180,7 +264,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -188,7 +274,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/foodtemp$app.coverage" NAME="app Coverage Results" MODIFIED="1658829904713" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/foodtemp$run.coverage" NAME="run Coverage Results" MODIFIED="1660736123323" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/foodtemp$run.coverage" NAME="run Coverage Results" MODIFIED="1666969865914" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/food_temp$app.coverage" NAME="app Coverage Results" MODIFIED="1658793767286" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
